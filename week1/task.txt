@@ -1,0 +1,20 @@
+1- Activity : Create a NumPy array of the first 10 positive integers. Then:
+Print the array.
+Print the shape and data type of the array.
+Multiply each element by 2 and print the result.
+ 
+2- Activity : You are given the test scores of 5 students across 3 subjects in a 2D NumPy array. Each row represents a student, and each column a subject. See below:
+ 
+scores = np.array([
+    [78, 85, 90],
+    [88, 79, 92],
+    [84, 76, 88],
+    [90, 93, 94],
+    [75, 80, 70]
+])
+ 
+Tasks:
+Calculate and print the average score for each student.
+Calculate and print the average score for each subject.
+Identify the student (row index) with the highest total score.
+Add 5 bonus points to the third subject for all students.
