@@ -11,8 +11,18 @@
 
 
 class Factorial:
-    def __init__(self, number):
+    def __init__(self, num):
         self.num = num
+
+    def isPrime(self):
+        if (self.num <= 0):
+            return False
+        else:
+            for i in range(2, self.num -1):
+                if (self.num / i == 0):
+                    return True
+            return False
+
 
     def doRun(self, num):
         if (num < 0):
@@ -28,6 +38,10 @@ class Factorial:
 
 num = int(float(input('input a number ')))
 fac = Factorial(num)
-result = fac.run()
-print(f'the result is {result}')
+# result = fac.run()
+# print(f'the result is {result}')
+if (fac.isPrime()):
+    print('it is a prime')
+else:
+    print('it is not a prime')
                 
