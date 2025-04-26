@@ -17,6 +17,8 @@ class Factorial:
     def isPrime(self):
         if (self.num <= 0):
             return False
+        elif (self.num == 2):
+            return True
         else:
             for i in range(2, self.num -1):
                 if (self.num / i == 0):
