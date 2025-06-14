@@ -10,7 +10,7 @@ class TicTacToe:
         self.input_time = 0
 
     def new_game(self):
-        for i in range(0, 9):
+        for i in range(9):
             self.board[i] = ''
 
         self.input_time = 0
@@ -34,9 +34,8 @@ class TicTacToe:
         self.current_player = 1 - self.current_player
 
     def get_player_symbol(self):
-        if self.current_player == 0:
-            return 'X'
-        return 'O'
+        return 'X' if self.current_player == 0 else 'O'
+
 
     def check_same(self, pos0, pos1, pos2):
         return (self.board[pos0] != '' and
@@ -47,6 +46,9 @@ class TicTacToe:
             self.check_same(0, 1, 2) or
             self.check_same(3, 4, 5) or
             self.check_same(6, 7, 8) or
+            self.check_same(0, 3, 6) or
+            self.check_same(1, 4, 7) or
+            self.check_same(2, 5, 8) or
             self.check_same(0, 4, 8) or
             self.check_same(2, 4, 6)
         )
@@ -71,7 +73,7 @@ class TicTacToe:
         while (True):
           self.get_input()
           if (self.check_winner()):
-              print(f'The winner is {self.current_player}')
+              print(f'The winner is {self.get_player_symbol()}')
               print('Start a new game.')
               self.new_game()
 
@@ -81,6 +83,5 @@ class TicTacToe:
               self.new_game()
 
 if __name__ == "__main__":
-    # start_game()
     game = TicTacToe()
     game.start()
