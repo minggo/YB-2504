@@ -1,14 +1,10 @@
 from flask import Flask, render_template
 
-app = Flask("hello_world")
+app = Flask("flask learning")
 
 @app.route("/")
-def hello_flask():
+def load_image():
     return render_template('index.html')
-
-@app.route("/username/<name>")
-def learn(name):
-    return f"{name} is learning Flask!"
 
 if __name__ == '__main__':
     app.run(debug=True)
